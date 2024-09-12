@@ -32,4 +32,5 @@ body, html {
 #ascii-art {
     color: white;
     white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    display: none; /* Initially hidden */
 }
