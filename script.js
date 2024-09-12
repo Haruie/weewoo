@@ -83,7 +83,7 @@ $$ |      $$$$$$$$\ $$$$$$  |$$  /   \$$ |$$$$$$$$\ $$ |  $$ |\$$$$$$  |      $$
 
 function typeAsciiText(text, container) {
     let index = 0;
-    const typingSpeed = 10; // milliseconds
+    const typingSpeed = 1; // milliseconds
     container.innerHTML = '';
 
     function type() {
