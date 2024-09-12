@@ -1,27 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.style.backgroundColor = 'black'; // Ensure full black background
+    document.body.classList.add('black-background');
 
-    const initialText = document.getElementById('initial-text');
-    const yesButton = document.getElementById('yes-button');
-    const asciiArt = document.getElementById('ascii-art');
+    const yesButton = document.getElementById('yesButton');
+    const content = document.getElementById('content');
+    const asciiTextContainer = document.getElementById('asciiText');
     
-    // ASCII text
-    const asciiText = `........................`;
+    const asciiText = `
+     ____  _               _           ____  
+    |  _ \\| |             | |         |  _ \\ 
+    | |_) | |_   _  __ _ | | ___  ___| |_) |
+    |  _ <| | | | |/ _\` || |/ _ \\/ __|  _ < 
+    | |_) | | |_| | (_| || |  __/\\__ \\ |_) |
+    |____/|_|\\__,_|\\__,_||_|\\___||___/____/ 
+    `;
 
     yesButton.addEventListener('click', () => {
-        initialText.style.display = 'none';
-        asciiArt.style.display = 'block';
-
-        // Typing effect for ASCII text
-        let i = 0;
-        const speed = 10; // Faster speed in milliseconds
-        function typeWriter() {
-            if (i < asciiText.length) {
-                asciiArt.textContent += asciiText.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-        typeWriter();
+        content.style.display = 'none';
+        setTimeout(() => {
+            asciiTextContainer.style.display = 'block';
+            typeAsciiText(asciiText, asciiTextContainer);
+        }, 500); // delay to ensure content disappears
     });
 });
+
+function typeAsciiText(text, container) {
+    let index = 0;
+    const typingSpeed = 50; // milliseconds
+    container.innerHTML = '';
+
+    function type() {
+        if (index < text.length) {
+            container.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, typingSpeed);
+        }
+    }
+
+    type();
+}
