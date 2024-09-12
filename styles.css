@@ -3,51 +3,33 @@ body, html {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    background-color: black; /* Set background color to black */
-    color: white; /* Set text color to white */
+    background-color: white; /* Initial background color */
+    transition: background-color 5s; /* Transition effect for background color */
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
 }
 
-#container {
+#content {
     text-align: center;
+    color: white;
 }
 
-#message {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
+#initial-text h1 {
+    font-size: 3em;
 }
 
 #yes-button {
     font-size: 1.5em;
     padding: 10px 20px;
-    border: none;
-    background-color: #007BFF;
+    background-color: black;
     color: white;
+    border: none;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-#typing-area {
-    margin-top: 20px;
-    font-size: 1.2em;
-    white-space: pre-wrap;
-    display: none;
-}
-
-/* Animation */
-@keyframes fadeToBlack {
-    from {
-        background-color: white;
-    }
-    to {
-        background-color: black;
-    }
-}
-
-body {
-    animation: fadeToBlack 5s forwards;
+#ascii-art {
+    color: white;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
 }
