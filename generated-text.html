@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Page</title>
+</head>
+<body>
+    <div id="container" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+        <button id="yes-button" style="font-size: 1.5em; padding: 10px 20px; border: none; background-color: #007BFF; color: white; cursor: pointer; border-radius: 5px;">
+            YES
+        </button>
+    </div>
+    <script>
+        document.getElementById('yes-button').addEventListener('click', () => {
+            window.location.href = 'generated-text.html'; // Redirect to the new page
+        });
+    </script>
+</body>
+</html>
