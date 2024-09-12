@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Typing effect for ASCII text
         let i = 0;
-        const speed = 50; // Speed of typing effect in milliseconds
+        const speed = 10; // Speed of typing effect in milliseconds
         function typeWriter() {
             if (i < asciiText.length) {
                 asciiArt.textContent += asciiText.charAt(i);
