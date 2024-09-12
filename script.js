@@ -1,9 +1,7 @@
-function revealText() {
-    // Change the background color
-    document.body.style.backgroundColor = "black";
-
-    // Prepare the text to display
-    var text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+document.getElementById('yes-button').addEventListener('click', () => {
+    const typingArea = document.getElementById('typing-area');
+    typingArea.style.display = 'block';
+    const textToType = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⢠⠿⠷⣭⣶⣯⣥⣶⣾⣿⠀⠀⠀⠀⢠⠖⣒⡒⢢⣄⡴⠒⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢸⠷⣾⣿⡀⢠⡿⠑⠀⠀⢸⣿⡿⡄⠀⠀⠀⢸⢼⣍⠙⠛⠙⢷⡀⠀⣷⠒⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢸⣼⡟⣭⣻⢿⣧⡀⠀⣰⡿⠛⣫⣽⠀⠀⢠⠃⠈⢾⣄⠀⠀⢸⣷⡶⠓⢷⣄⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -71,22 +69,16 @@ function revealText() {
                                                                                                                                                                        
                                                                                                                                                                        ";
     
-    // Get the reveal-text element
-    var revealTextElement = document.getElementById("reveal-text");
-    
-    // Show the reveal-text element
-    revealTextElement.classList.remove("hidden");
+    let index = 0;
+    const typingSpeed = 50; // Adjust the typing speed (ms)
 
-    // Clear the content first
-    revealTextElement.innerHTML = "";
-
-    // Type out text in real-time
-    var index = 0;
-    var interval = setInterval(function() {
-        revealTextElement.innerHTML += text[index];
-        index++;
-        if (index >= text.length) {
-            clearInterval(interval);
+    function type() {
+        if (index < textToType.length) {
+            typingArea.textContent += textToType.charAt(index);
+            index++;
+            setTimeout(type, typingSpeed);
         }
-    }, 100); // Adjust the speed of typing by changing the interval time
-}
+    }
+
+    type();
+});
