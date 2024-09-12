@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Page</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <div id="message">DO YOU WANT YOUR FLOWERS?</div>
-        <button id="yes-button">YES</button>
-        <div id="typing-area"></div>
+    <div id="container" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: black;">
+        <button id="yes-button" style="font-size: 1.5em; padding: 10px 20px; border: none; background-color: #007BFF; color: white; cursor: pointer; border-radius: 5px;">
+            YES
+        </button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('yes-button').addEventListener('click', () => {
+            window.location.href = 'generated-text.html'; // Redirect to the new page
+        });
+    </script>
 </body>
 </html>
